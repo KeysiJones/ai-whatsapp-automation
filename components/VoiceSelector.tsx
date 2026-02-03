@@ -10,7 +10,7 @@ interface VoiceSelectorProps {
 
 const VoiceSelector: React.FC<VoiceSelectorProps> = ({ selectedVoice, onSelect, disabled }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
       {AVAILABLE_VOICES.map((voice) => {
         const isSelected = selectedVoice === voice.id;
         return (
@@ -20,8 +20,8 @@ const VoiceSelector: React.FC<VoiceSelectorProps> = ({ selectedVoice, onSelect, 
             disabled={disabled}
             className={`
               relative flex flex-col items-start p-3 rounded-lg border transition-all duration-200 text-left
-              ${isSelected 
-                ? 'bg-indigo-600/10 border-indigo-500 ring-1 ring-indigo-500' 
+              ${isSelected
+                ? 'bg-indigo-600/10 border-indigo-500 ring-1 ring-indigo-500'
                 : 'bg-slate-800 border-slate-700 hover:border-slate-600 hover:bg-slate-750'
               }
               ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
