@@ -10,7 +10,7 @@ interface VoiceSelectorProps {
 
 const VoiceSelector: React.FC<VoiceSelectorProps> = ({ selectedVoice, onSelect, disabled }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
       {AVAILABLE_VOICES.map((voice) => {
         const isSelected = selectedVoice === voice.id;
         return (
@@ -35,11 +35,11 @@ const VoiceSelector: React.FC<VoiceSelectorProps> = ({ selectedVoice, onSelect, 
                 <span className="w-2 h-2 bg-indigo-500 rounded-full"></span>
               )}
             </div>
-            <div className="flex items-center gap-2 text-xs text-slate-400">
-              <span className="uppercase tracking-wider text-[10px] bg-slate-900/50 px-1.5 py-0.5 rounded text-slate-500 font-bold">
+            <div className="flex items-center gap-2 text-xs text-slate-400 w-full">
+              <span className="uppercase tracking-wider text-[10px] bg-slate-900/50 px-1.5 py-0.5 rounded text-slate-500 font-bold flex-shrink-0">
                 {voice.gender.substring(0, 1)}
               </span>
-              <span className="truncate" title={voice.description}>{voice.description}</span>
+              <span className="truncate min-w-0" title={voice.description}>{voice.description}</span>
             </div>
           </button>
         );
